@@ -1,0 +1,15 @@
+version: '3'
+services:
+  db:
+    image: postgres:16.0
+    restart: always
+    volumes:
+      - ./data/db:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+    environment:
+      - POSTGRES_DB=spyne-backend-db
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=s3cret123
+
